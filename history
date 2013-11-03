@@ -1,0 +1,28 @@
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=1000
+
+# Save each command's beginning timestamp and duration
+setopt EXTENDED_HISTORY
+
+# Expire duplicates before other lines from the history
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Don't show earlier found duplicates in history search
+setopt HIST_FIND_NO_DUPS
+
+# Don't add command to history if it's identical to the last one
+setopt HIST_IGNORE_DUPS 
+
+# Remove history command from the history
+setopt HIST_NO_STORE
+
+# Remove superflous blanks before adding to history
+setopt HIST_REDUCE_BLANKS
+
+# Add stuff to history file continually
+setopt INC_APPEND_HISTORY
+
+# Import history from file automatically
+setopt SHARE_HISTORY

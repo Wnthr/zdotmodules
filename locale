@@ -1,0 +1,16 @@
+# Prioritize locales for LANG here
+lang_prio=("sv_SE.utf8" "en_US.utf8" "C")
+locale_avail=`locale -a`
+LANG=""
+for i in $lang_prio; do
+  if [[ ${locale_avail[(i)$i]} -le ${#locale_avail} ]] ; then
+    LANG=$i
+    break
+  else 
+    echo no 
+  fi
+done
+export LANG
+# FIXME: These should be scripted as well, not sure how yet
+export LC_MESSAGES="en_US.utf8"
+export LC_COLLATE="C"

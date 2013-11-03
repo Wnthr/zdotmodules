@@ -1,0 +1,10 @@
+alias fishy='ssh fishy'
+alias just_data='no_comments | no_whitespace | no_empty'
+alias ls='ls -F'
+alias no_comments='grep -v "^#"'
+alias no_empty='grep -v "^\ *$"'
+alias no_whitespace='tr -d "\ \t"'
+alias serverinfo='/proj/unixteam/scripts/serverinfo'
+alias tmux='tmux attach || tmux new'
+alias vi=vim
+alias yum='sudo yum'

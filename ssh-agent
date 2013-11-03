@@ -1,0 +1,22 @@
+if [ -f $HOME/.ssh/id_[rd]sa ]; then
+  if [ -z "$TMUX" ]; then
+    if [ -n "$SSH_TTY" ]; then
+      if [ -z "$SSH_AUTH_SOCK" ]; then
+        export SSH_AUTH_SOCK=$HOME/.ssh/.auth_socket
+      fi
+
+      if [ ! -S "$SSH_AUTH_SOCK" ]; then
+        RES=`ssh-agent -sa $SSH_AUTH_SOCK`
+        echo $RES
+        eval $RES
+      else
+        export SSH_AGENT_PID=`cat $HOME/.ssh/.auth_pid`
+      fi
+
+      if [ -n "$SSH_AGENT_PID" ]; then
+        echo $SSH_AGENT_PID > $HOME/.ssh/.auth_pid
+      fi
+      ssh-add
+    fi
+  fi
+fi

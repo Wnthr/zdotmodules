@@ -1,0 +1,16 @@
+# prompt stuff
+autoload colors
+colors
+fpath=(~/myfns $fpath)
+autoload -U promptinit
+promptinit
+
+setprompt () {
+    setopt prompt_subst
+    PROMPT="%(!.%{$fg[red]%}.%{$fg_bold[green]%})%n %{$fg_bold[cyan]%}%m:%2~%{$fg_bold[green]%} %! %{$fg_bold[green]%}%# %(?..%{$fg_no_bold[yellow]%}{%?} )%{$reset_color%}"
+    RPROMPT=''
+    PS2='%{$fg_no_bold[cyan]%}%_>%{$reset_color%} '
+}
+
+setprompt
+bindkey -e

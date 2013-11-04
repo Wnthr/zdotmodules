@@ -1,0 +1,2 @@
+fpath=(~/myfns $fpath)
+autoload ${fpath[1]}/*(:t)

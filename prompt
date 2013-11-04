@@ -1,7 +1,6 @@
 # prompt stuff
 autoload colors
 colors
-fpath=(~/myfns $fpath)
 autoload -U promptinit
 promptinit
 
@@ -13,4 +12,5 @@ setprompt () {
 }
 
 setprompt
+unset -f setprompt
 bindkey -e

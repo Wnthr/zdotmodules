@@ -6,9 +6,7 @@ if [ -f $HOME/.ssh/id_[rd]sa ]; then
       fi
 
       if [ ! -S "$SSH_AUTH_SOCK" ]; then
-        RES=`ssh-agent -sa $SSH_AUTH_SOCK`
-        echo $RES
-        eval $RES
+        eval `ssh-agent -sa $SSH_AUTH_SOCK`
       else
         export SSH_AGENT_PID=`cat $HOME/.ssh/.auth_pid`
       fi

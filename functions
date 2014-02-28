@@ -1,2 +1,7 @@
-fpath=(~/myfns $fpath)
-autoload ${fpath[1]}/*(:t)
+FUNCTION_DIR=~/myfns
+if [ -d $FUNCTION_DIR ]; then
+  fpath=($FUNCTION_DIR $fpath)
+  if [ `ls $FUNCTION_DIR | wc -l` -ne 0 ]; then
+    autoload ${fpath[1]}/*(:t)
+  fi
+fi

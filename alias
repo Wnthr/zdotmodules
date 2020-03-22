@@ -1,4 +1,9 @@
-alias ls='ls -F'
+NO_COLOR=`echo $TERM | sed 's/color//'`
+LS='ls -hF --time-style=long-iso'
+if [ "x$TERM" != "x$NO_COLOR" ]; then
+  LS="$LS --color"
+fi
+alias ls=$LS
 alias tmux='tmux attach || tmux new'
 alias vi=vim
 alias yum='sudo yum'

@@ -1,2 +1,15 @@
-PATH=${HOME}/bin:$PATH
+HOME_BIN="${HOME}/bin"
+NEW_PATH=""
+IFS=':'
+for i in `echo $PATH`; do
+  if [ "x$i" != "x$HOME_BIN" ]; then
+    if [ -z $NEW_PATH ]; then
+      NEW_PATH=$i
+    else
+      NEW_PATH=${NEW_PATH}:$i
+    fi
+  fi
+done
+unset IFS
+PATH=${HOME_BIN}:$NEW_PATH
 export PATH

@@ -1,13 +1,14 @@
 # Prioritize locales for LANG here
-lang_prio=("sv_SE.utf8" "en_US.utf8" "C")
+export LC_CTYPE="sv_SE.utf8"
+lang_prio=("en_US.utf8" "C")
 locale_avail=`locale -a`
 LANG=""
 for i in $lang_prio; do
   if [[ ${locale_avail[(i)$i]} -le ${#locale_avail} ]] ; then
     LANG=$i
     break
-  else 
-    echo no 
+  else
+    echo no
   fi
 done
 export LANG

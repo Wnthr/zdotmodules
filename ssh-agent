@@ -1,4 +1,4 @@
-if [ -f $HOME/.ssh/id_[rd]sa ]; then
+if [ -f $HOME/.ssh/*.pub ]; then
   if [ -z "$TMUX" ]; then
     if [ -n "$SSH_TTY" ]; then
       if [ -z "$SSH_AUTH_SOCK" ]; then

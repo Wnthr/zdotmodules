@@ -1,7 +1,10 @@
 NO_COLOR=`echo $TERM | sed 's/color//'`
-LS='ls -hF --time-style=long-iso'
+LS='ls -hF'
 if [ "x$TERM" != "x$NO_COLOR" ]; then
-  LS="$LS --color"
+  LS="$LS -G"
+fi
+if [ "$(uname -s)" != "Darwin" ]; then
+  LS="$LS --time-style=long-iso"
 fi
 alias ls=$LS
 alias tmux='tmux attach || tmux new'

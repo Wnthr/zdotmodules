@@ -13,7 +13,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 
 # Don't add command to history if it's identical to the last one
-setopt HIST_IGNORE_DUPS 
+setopt HIST_IGNORE_DUPS
 
 # Remove history command from the history
 setopt HIST_NO_STORE
@@ -26,3 +26,12 @@ setopt INC_APPEND_HISTORY
 
 # Import history from file automatically
 setopt SHARE_HISTORY
+
+# Don't add to history if command line start with a space
+setopt HIST_IGNORE_SPACE
+
+# When importing history, do quoting correctly
+setopt HIST_LEX_WORDS
+
+# Don't add function definitions to history
+setopt HIST_NO_FUNCTIONS

@@ -1,4 +1,5 @@
 # prompt stuff
+setopt PROMPT_BANG PROMPT_SUBST
 autoload colors
 colors
 autoload -U promptinit
